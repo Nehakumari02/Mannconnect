@@ -1,0 +1,39 @@
+.app-min-vh{
+    min-height: calc(100vh - 200px);
+}
+
+.sidenav-active, .sidenav-inactive {
+    @apply p-3 -ml-3 rounded-lg transition-colors duration-150 ease-out cursor-pointer;
+}
+
+.sidenav-active {
+    @apply bg-transparent;
+}
+
+.sidenav-active span {
+    @apply text-lab-pr font-bold;
+}
+
+.sidenav-active svg {
+    @apply text-lab-pr;
+}
+
+.sidenav-inactive {
+    @apply hover:bg-black/5 dark:hover:bg-white/10 active:bg-black/10 dark:active:bg-white/15;
+}
+
+.sidenav-inactive span {
+    @apply text-lab-pr font-normal transition-none;
+}
+
+.sidenav-inactive svg {
+    @apply text-lab-pr transition-none;
+}
+
+select {
+    appearance: none;
+}
+
+select option{
+    @apply odd:bg-fill-qt px-4 py-1.5 text-lab-pr2 text-par-s;
+}
