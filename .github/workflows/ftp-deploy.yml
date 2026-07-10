@@ -23,7 +23,9 @@ jobs:
       run: mkdir -p bootstrap/cache
         
     - name: Install Composer Dependencies
-      run: composer install --no-dev --optimize-autoloader
+      run: |
+        cp .env.example .env
+        composer install --no-dev --optimize-autoloader
 
     - name: Sync files to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
