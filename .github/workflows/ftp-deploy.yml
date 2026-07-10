@@ -17,6 +17,10 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.4'
+    
+     # ADD THIS NEW STEP HERE:
+    - name: Create Cache Directory
+      run: mkdir -p bootstrap/cache
         
     - name: Install Composer Dependencies
       run: composer install --no-dev --optimize-autoloader
