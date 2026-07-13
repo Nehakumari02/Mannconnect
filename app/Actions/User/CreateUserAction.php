@@ -88,6 +88,12 @@ class CreateUserAction
             'billing_address' => []
         ]);
 
+        if (request()->hasCookie('referral_id')) {
+            $userData->update(['referred_by' => request()->cookie('referral_id')]);
+        }
+
+        app(\App\Services\Reward\RewardService::class)->award($userData, 'registration');
+
         return $userData;
     }
 

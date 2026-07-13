@@ -343,4 +343,19 @@ class User extends Authenticatable
     {
         return $this->verified;
     }
+
+    public function rewardLogs()
+    {
+        return $this->hasMany(RewardLog::class, 'user_id', 'id');
+    }
+
+    public function referrer()
+    {
+        return $this->belongsTo(User::class, 'referred_by', 'id');
+    }
+
+    public function referrals()
+    {
+        return $this->hasMany(User::class, 'referred_by', 'id');
+    }
 }

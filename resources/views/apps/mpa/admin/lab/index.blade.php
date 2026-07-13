@@ -11,5 +11,4 @@
 		@endforeach
 	</div>
 
-	<x-info.laravel-notice></x-info.laravel-notice>
 @endsection

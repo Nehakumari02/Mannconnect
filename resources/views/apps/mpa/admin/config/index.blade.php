@@ -21,6 +21,10 @@
                 <x-navbar.item href="{{ route('admin.config.general') }}" icon="settings-01">
                     {{ __('admin/sidebar.general_settings') }}
                 </x-navbar.item>
+                
+                <x-navbar.item href="{{ route('admin.config.rewards') }}" icon="star-01">
+                    Rewards Settings
+                </x-navbar.item>
 
                 <x-navbar.item href="{{ route('admin.config.email') }}" icon="mail-01">
                     {{ __('admin/sidebar.email_settings') }}

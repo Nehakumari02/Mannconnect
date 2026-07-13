@@ -16,6 +16,11 @@
 		v-bind:routeData="{ name: 'settings_notifications' }"></LinkItem>
 
 		<LinkItem
+			iconName="coins-01"
+			v-bind:textLabel="$t('rewards.history_title')"
+		v-bind:routeData="{ name: 'settings_rewards' }"></LinkItem>
+
+		<LinkItem
 			iconName="translate-01"
 			v-bind:textLabel="$t('labels.language')"
 		v-bind:routeData="{ name: 'settings_language' }"></LinkItem>

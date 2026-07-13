@@ -118,6 +118,11 @@ class AccountSettingsController extends Controller
 
         $this->me->update($updateData);
 
+        // Check if profile is complete (all fields filled)
+        if (!empty($updateData['first_name']) && !empty($updateData['last_name']) && !empty($updateData['bio']) && !empty($updateData['website'])) {
+            app(\App\Services\Reward\RewardService::class)->award($this->me, 'complete_profile');
+        }
+
         return $this->responseSuccess([
             'data' => $updateData
         ]);
@@ -170,6 +175,8 @@ class AccountSettingsController extends Controller
             $this->me->update([
                 'avatar' => $imageData['image_path']
             ]);
+
+            app(\App\Services\Reward\RewardService::class)->award($this->me, 'profile_photo_upload');
 
             return $this->responseSuccess([
                 'data' => [

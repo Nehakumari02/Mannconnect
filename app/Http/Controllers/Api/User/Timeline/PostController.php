@@ -65,6 +65,9 @@ class PostController extends Controller
                 $this->draftPost->is_quoting = true;
 
                 $quotedPost->increment('quotes_count', 1);
+
+                // Award points to the user for sharing/quoting a post
+                app(\App\Services\Reward\RewardService::class)->award(me(), 'share_content');
             }
         }
 
@@ -224,6 +227,9 @@ class PostController extends Controller
                 
             if (! $postData->is_owner && $isReactionAdded) {
                 $postData->user->notify(new PostReactedNotification($postData, strtolower($reactionUnifiedId)));
+
+                // Award points for receiving a reaction
+                app(\App\Services\Reward\RewardService::class)->award($postData->user, 'receive_like');
             }
 
             return $this->responseSuccess([

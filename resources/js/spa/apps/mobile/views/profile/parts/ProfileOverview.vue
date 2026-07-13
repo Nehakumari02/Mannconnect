@@ -18,6 +18,14 @@
 				{{ $t('labels.joined_at_date', { date: profileData.join_date.formatted }) }}
 			</span>
 		</div>
+		<div v-if="profileData.points" class="inline-flex gap-1 text-lab-pr2 leading-zero items-center text-primary-base">
+			<span class="text-primary-base">
+				<SvgIcon name="star-06" type="solid" classes="size-icon-small text-primary-base"></SvgIcon>
+			</span>
+			<span class="text-par-n font-semibold">
+				{{ profileData.points.formatted }} Points
+			</span>
+		</div>
 	</div>
 </template>
 

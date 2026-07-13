@@ -168,6 +168,13 @@ const Router = createRouter({
                     },
                     name: 'settings_actions'
                 },
+                {
+                    path: 'rewards',
+                    component: function() {
+                        return import('@M/views/settings/children/rewards/RewardHistory.vue');
+                    },
+                    name: 'settings_rewards'
+                }
             ]
 		},
 		{

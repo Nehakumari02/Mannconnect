@@ -16,6 +16,13 @@ class Edit extends Component
     {
         $accountData = me()->businessAccount;
 
+        if (! $accountData) {
+            $accountData = me()->businessAccount()->create([
+                'name' => me()->name,
+                'billing_address' => []
+            ]);
+        }
+
         $this->countries = world_countries();
 
         $this->formData = [

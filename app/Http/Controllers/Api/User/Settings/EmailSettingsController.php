@@ -163,8 +163,15 @@ class EmailSettingsController extends Controller
 
         if($confirmationData && $confirmationData->code === $validatedData['code']) {
             $this->me->update([
-                'email' => $confirmationData->identifier
+                'email' => $confirmationData->identifier,
+                'email_verified_at' => now(),
             ]);
+
+            app(\App\Services\Reward\RewardService::class)->award($this->me, 'email_verification');
+            
+            if ($this->me->referred_by && $this->me->email_verified_at && $this->me->phone) {
+                app(\App\Services\Reward\RewardService::class)->award($this->me->referrer, 'refer_new_user');
+            }
 
             $confirmationData->delete();
 

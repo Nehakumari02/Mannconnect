@@ -26,6 +26,19 @@ class HandlePostCreation
         $this->notifyMentionedUsers($event->postData);
 
         $this->censorPost($event->postData);
+
+        // Award post creation points
+        $rewardService = app(\App\Services\Reward\RewardService::class);
+        $user = $event->postData->user;
+
+        if ($event->postData->type->isVideo()) {
+            $rewardService->award($user, 'upload_video_post');
+        } elseif ($event->postData->type->isImage()) {
+            $rewardService->award($user, 'upload_image_post');
+        } else {
+            // Default text/link/other post
+            $rewardService->award($user, 'create_post');
+        }
     }
 
     private function censorPost(Post $postData)

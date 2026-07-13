@@ -16,5 +16,7 @@ class HandleUserLogin
         $user = $event->user;
 
         (new UpdateUserDeviceAction())->execute($user);
+        
+        app(\App\Services\Reward\RewardService::class)->award($user, 'daily_login');
     }
 }

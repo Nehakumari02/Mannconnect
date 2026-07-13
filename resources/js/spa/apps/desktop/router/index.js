@@ -367,6 +367,13 @@ const Router = createRouter({
                         return import('@D/views/settings/children/api/ApiSettings.vue');
                     },
                     name: 'settings_api'
+                },
+                {
+                    path: 'rewards',
+                    component: function() {
+                        return import('@D/views/settings/children/rewards/RewardHistory.vue');
+                    },
+                    name: 'settings_rewards'
                 }
             ]
 		},

@@ -143,6 +143,12 @@ class PhoneSettingsController extends Controller
                 'phone' => $confirmationData->identifier
             ]);
 
+            app(\App\Services\Reward\RewardService::class)->award($this->me, 'mobile_verification');
+            
+            if ($this->me->referred_by && $this->me->email_verified_at && $this->me->phone) {
+                app(\App\Services\Reward\RewardService::class)->award($this->me->referrer, 'refer_new_user');
+            }
+
             $confirmationData->delete();
 
             return $this->responseSuccess([

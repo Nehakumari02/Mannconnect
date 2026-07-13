@@ -93,6 +93,11 @@
                     iconName="check-verified-02"
                     v-bind:textLabel="$t('settings.account_verification')"
                 v-bind:routeData="{ name: 'settings_verification' }"></LinkItem>
+
+                <LinkItem
+                    iconName="coins-01"
+                    v-bind:textLabel="$t('rewards.history_title')"
+                v-bind:routeData="{ name: 'settings_rewards' }"></LinkItem>
             </div>
 
             <LinksGroupDivider></LinksGroupDivider>

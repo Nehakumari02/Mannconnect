@@ -22,4 +22,5 @@ return [
     'button' => require __DIR__ . '/button.php',
     'dd' => require __DIR__ . '/dd.php',
     'info' => require __DIR__ . '/info.php',
+    'rewards' => require __DIR__ . '/rewards.php',
 ];

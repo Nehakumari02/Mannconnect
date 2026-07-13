@@ -79,6 +79,8 @@ class CommentController extends Controller
 
         if(! $postData->is_owner && empty($parentId)) {
             $postData->user->notify(new PostCommentedNotification($postData, $commentContent));
+            
+            app(\App\Services\Reward\RewardService::class)->award($postData->user, 'receive_comment');
         }
 
         else {

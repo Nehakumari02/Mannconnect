@@ -22,8 +22,17 @@ class SettingsController extends Controller
 {
     public function index()
     {
+        $accountData = me()->businessAccount;
+
+        if (! $accountData) {
+            $accountData = me()->businessAccount()->create([
+                'name' => me()->name,
+                'billing_address' => []
+            ]);
+        }
+
         return view('business::settings.index', [
-            'accountData' => me()->businessAccount
+            'accountData' => $accountData
         ]);
     }
 

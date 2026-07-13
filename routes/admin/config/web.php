@@ -31,3 +31,5 @@ Route::get('/auth', [App\Http\Controllers\Admin\Config\ConfigController::class, 
 Route::get('/code-injection', [App\Http\Controllers\Admin\Config\ConfigController::class, 'codeInjection'])->name('admin.config.code-injection');
 
 Route::get('/backup', [App\Http\Controllers\Admin\Config\ConfigController::class, 'backup'])->name('admin.config.backup');
+
+Route::get('/rewards', [App\Http\Controllers\Admin\Config\ConfigController::class, 'rewards'])->name('admin.config.rewards');

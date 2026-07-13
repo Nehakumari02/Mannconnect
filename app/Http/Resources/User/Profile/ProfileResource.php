@@ -64,6 +64,10 @@ class ProfileResource extends JsonResource
                 'raw' => $this->following_count,
                 'formatted' => Num::abbreviate($this->following_count)
             ],
+            'points' => ($hideContent) ? null : [
+                'raw' => $this->points,
+                'formatted' => Num::abbreviate($this->points ?? 0)
+            ],
             'meta' => [
                 'is_owner' => $isMe,
                 'permissions' => [

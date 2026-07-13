@@ -25,6 +25,10 @@ class UserOverviewResource extends JsonResource
                 'raw' => $this->followers_count,
                 'formatted' => Num::abbreviate($this->followers_count)
             ],
+            'points' => [
+                'raw' => $this->points,
+                'formatted' => Num::abbreviate($this->points ?? 0)
+            ],
             'last_active' => [
                 'raw' => $this->getLastActive()->getTimestamp(),
                 'formatted' => $this->getLastActive()->getCalendar()

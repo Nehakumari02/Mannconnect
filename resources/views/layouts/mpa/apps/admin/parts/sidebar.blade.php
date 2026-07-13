@@ -149,20 +149,8 @@
                 :current="route_is('admin.banning.*')"
             text="{{ __('admin/sidebar.banned') }}"/>
 
-            <x-sidebar.navlist-div/>
 
-            <x-sidebar.navlist-item
-                href="{{ url(config('log-viewer.route_path')) }}"
-                iconName="alert-01"
-                iconType="solar"
-            text="{{ __('admin/sidebar.logging') }}"/>
 
-            <x-sidebar.navlist-item
-                href="{{ config('app.documentation_url') }}"
-                iconName="doc-01"
-                iconType="solar"
-                target="_blank"
-            text="{{ __('admin/sidebar.documentation') }}"/>
         </x-sidebar.navlist>
 		<div class="mt-auto py-6">
 			<div class="flex flex-wrap gap-1">

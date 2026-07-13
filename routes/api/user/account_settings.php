@@ -60,6 +60,8 @@ Route::put('/social/update', [App\Http\Controllers\Api\User\Settings\SocialSetti
 Route::get('/account/settings', [App\Http\Controllers\Api\User\Settings\AccountSettingsController::class, 'getAccountSettings']);
 Route::put('/account/update', [App\Http\Controllers\Api\User\Settings\AccountSettingsController::class, 'updateAccountData']);
 
+Route::get('/rewards/history', [App\Http\Controllers\Api\User\Settings\RewardHistoryController::class, 'index']);
+
 Route::get('/authorship/settings', [App\Http\Controllers\Api\User\Settings\AccountSettingsController::class, 'getAuthorshipSettings']);
 Route::post('/authorship/request', [App\Http\Controllers\Api\User\Settings\AccountSettingsController::class, 'requestAuthorship']);
 Route::get('/account/credentials/settings', [App\Http\Controllers\Api\User\Settings\AccountSettingsController::class, 'getCredentialsSettings']);

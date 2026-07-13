@@ -55,7 +55,8 @@ return Application::configure(basePath: dirname(__DIR__))->withRouting(
 
             $middleware->web(append: [
                 App\Http\Middleware\UserLanguageMiddleware::class,
-                App\Http\Middleware\UserOnlineMiddleware::class
+                App\Http\Middleware\UserOnlineMiddleware::class,
+                App\Http\Middleware\CaptureReferral::class
             ]);
 
             $middleware->api(append: [

@@ -124,4 +124,9 @@ class ConfigController extends Controller
     {
         return view('admin::config.backup.index');
     }
+
+    public function rewards()
+    {
+        return view('admin::config.rewards.index');
+    }
 }
