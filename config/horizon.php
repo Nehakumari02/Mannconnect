@@ -4,6 +4,8 @@ use Illuminate\Support\Str;
 
 return [
 
+    'name' => env('APP_NAME', 'MannConnect'),
+
     /*
     |--------------------------------------------------------------------------
     | Horizon Domain

@@ -16,8 +16,6 @@
 			{{ __('admin/info.round_robin_notice.line_three') }}
 		</p>
 
-		<a href="{{ config('app.documentation_url') }}" class="block" target="_blank">
-			<x-ui.buttons.pill size="sm" type="button" width="w-full" btnText="{{ __('labels.learn_more') }}"></x-ui.buttons.pill>
-		</a>
+
 	</div>
 </x-card>

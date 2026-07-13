@@ -2,6 +2,8 @@
 
 return [
 
+    'name' => env('APP_NAME', 'MannConnect'),
+
     'app_url' => env('APP_URL', 'http://localhost'),
 
     /*
