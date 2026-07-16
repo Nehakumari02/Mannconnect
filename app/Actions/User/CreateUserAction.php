@@ -89,8 +89,15 @@ class CreateUserAction
         ]);
 
         if (request()->hasCookie('referral_id')) {
-            $userData->update(['referred_by' => request()->cookie('referral_id')]);
-        }
+            $referrerId = request()->cookie('referral_id');
+            $userData->update(['referred_by' => $referrerId]);
+
+            $referrer = User::find($referrerId);
+
+            if ($referrer) {
+            app(\App\Services\Reward\RewardService::class)->award($referrer, 'refer_new_user', $userData);
+            }
+         }
 
         app(\App\Services\Reward\RewardService::class)->award($userData, 'registration');
 

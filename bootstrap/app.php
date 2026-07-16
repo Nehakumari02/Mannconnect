@@ -70,6 +70,20 @@ return Application::configure(basePath: dirname(__DIR__))->withRouting(
 
             $middleware->group('admin-area', ['web', 'admin']);
 
+            $middleware->priority([
+                \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
+                \Illuminate\Cookie\Middleware\EncryptCookies::class,
+                \Illuminate\Session\Middleware\StartSession::class,
+                \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+                App\Http\Middleware\CaptureReferral::class,
+                \Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests::class,
+                \Illuminate\Routing\Middleware\ThrottleRequests::class,
+                \Illuminate\Routing\Middleware\ThrottleRequestsWithRedis::class,
+                \Illuminate\Contracts\Session\Middleware\AuthenticatesSessions::class,
+                \Illuminate\Routing\Middleware\SubstituteBindings::class,
+                \Illuminate\Auth\Middleware\Authorize::class,
+            ]);
+
         })->withExceptions(function (Exceptions $exceptions) {
 
         })->create();

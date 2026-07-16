@@ -23,4 +23,5 @@ return [
     'dd' => require __DIR__ . '/dd.php',
     'info' => require __DIR__ . '/info.php',
     'rewards' => require __DIR__ . '/rewards.php',
+    'referral' => require __DIR__ . '/referral.php',
 ];

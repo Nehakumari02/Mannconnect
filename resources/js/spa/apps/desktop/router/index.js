@@ -374,6 +374,13 @@ const Router = createRouter({
                         return import('@D/views/settings/children/rewards/RewardHistory.vue');
                     },
                     name: 'settings_rewards'
+                },
+                {
+                    path: 'referral',
+                    component: function() {
+                        return import('@D/views/settings/children/referral/ReferralDashboard.vue');
+                    },
+                    name: 'settings_referral'
                 }
             ]
 		},

@@ -98,6 +98,10 @@
                     iconName="coins-01"
                     v-bind:textLabel="$t('rewards.history_title')"
                 v-bind:routeData="{ name: 'settings_rewards' }"></LinkItem>
+                <LinkItem
+                    iconName="user-plus-01"
+                    v-bind:textLabel="$t('referral.dashboard_title')"
+                v-bind:routeData="{ name: 'settings_referral' }"></LinkItem>                
             </div>
 
             <LinksGroupDivider></LinksGroupDivider>

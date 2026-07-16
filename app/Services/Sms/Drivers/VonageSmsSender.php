@@ -22,7 +22,7 @@ class VonageSmsSender implements SmsDriverInterface
 	public function send(string $receiptNumber, string $smsMessage): bool
 	{
 		try {
-			$messageInstance = new SMS($receiptNumber, 'MyBrand', $smsMessage, 'unicode');
+			$messageInstance = new SMS($receiptNumber, config('services.vonage.from_number', 'MyBrand'), $smsMessage, 'unicode');
 			$messageInstance->setClientRef('test-message');
 			$response = $this->smsClient->sms()->send($messageInstance);
 			
