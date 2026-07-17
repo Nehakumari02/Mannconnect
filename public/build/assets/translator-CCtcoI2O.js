@@ -1,0 +1,1 @@
+import{t as e}from"./native-B4ndIhG4.js";var t=function(){return{translate:async t=>await e().translator().with({text:t}).sendTo(`translate`).then(e=>e.data.data.translated_text).catch(e=>(e.response.data.message&&alert(e.response.data.message),!1))}};export{t};

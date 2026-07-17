@@ -1,0 +1,1 @@
+import{F as e,R as t,_ as n,t as r}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var i={},a={class:`popup-background-tr border-fill-qt/50`};function o(r,i){return e(),n(`div`,a,[t(r.$slots,`default`)])}var s=r(i,[[`render`,o]]);export{s as t};

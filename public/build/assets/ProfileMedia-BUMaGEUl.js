@@ -1,0 +1,1 @@
+import{C as e,F as t,h as n,t as r,z as i}from"./_plugin-vue_export-helper-0gAuu8Fn.js";import{t as a}from"./ProfileTimeline-DuGc95ZM.js";var o=e({components:{PostsContent:a}});function s(e,r,a,o,s,c){let l=i(`PostsContent`);return t(),n(l,{contentType:`media`})}var c=r(o,[[`render`,s]]);export{c as default};

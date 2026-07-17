@@ -1,0 +1,1 @@
+import{t as e}from"./PublicationQuote-ByA-LxEj.js";export{e as default};

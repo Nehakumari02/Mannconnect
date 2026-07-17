@@ -1,0 +1,1 @@
+import{F as e,_ as t,t as n,ut as r}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var i={},a={class:`block leading-none cursor-pointer rounded-lg text-center text-lab-pr3 text-par-s overflow-hidden border border-edge-tr p-2.5`};function o(n,i){return e(),t(`div`,a,r(n.$t(`empty_state.missing_content.quoted_post`)),1)}var s=n(i,[[`render`,o]]);export{s as default};

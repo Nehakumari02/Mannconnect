@@ -1,0 +1,1 @@
+import{C as e,F as t,_ as n,l as r,t as i,x as a,z as o}from"./_plugin-vue_export-helper-0gAuu8Fn.js";import{t as s}from"./ToastNotification-CeRog5rn.js";var c=e({components:{ToastNotification:s}});function l(e,i,s,c,l,u){let d=o(`RouterView`),f=o(`ToastNotification`);return t(),n(r,null,[a(d),a(f)],64)}var u=i(c,[[`render`,l]]);export{u as default};

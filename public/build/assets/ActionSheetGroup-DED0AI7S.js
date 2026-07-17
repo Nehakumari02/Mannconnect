@@ -1,0 +1,1 @@
+import{F as e,R as t,_ as n,t as r}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var i={},a={class:`overflow-hidden rounded-2xl bg-bg-pr/80 backdrop-blur-2xl mx-4`};function o(r,i){return e(),n(`div`,a,[t(r.$slots,`default`)])}var s=r(i,[[`render`,o]]);export{s as t};

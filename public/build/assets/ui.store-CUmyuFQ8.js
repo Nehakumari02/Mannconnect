@@ -1,0 +1,1 @@
+import{n as e}from"./pinia-BkWVIj3l.js";var t=e(`ui`,{state:()=>({cheatSheet:{isOpen:!1}}),actions:{openCheatSheet:function(){this.cheatSheet.isOpen=!0},closeCheatSheet:function(){this.cheatSheet.isOpen=!1}}});export{t};

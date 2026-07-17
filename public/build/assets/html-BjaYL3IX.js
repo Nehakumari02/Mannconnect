@@ -1,0 +1,1 @@
+var e=(e,t)=>{let n=window.getComputedStyle(e),r=parseFloat(n.lineHeight);isNaN(r)&&(r=parseFloat(n.fontSize)*1.2);let i=r*t;return e.scrollHeight>i};export{e as t};

@@ -1,0 +1,1 @@
+import{F as e,_ as t,m as n,t as r}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var i={},a={class:`size-full flex-center absolute inset-0 backdrop-blur-xs cursor-not-allowed`};function o(r,i){return e(),t(`div`,a,[...i[0]||=[n(`div`,{class:`colibri-primary-animation`},null,-1)]])}var s=r(i,[[`render`,o]]);export{s as t};

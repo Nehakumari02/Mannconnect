@@ -1,0 +1,1 @@
+var e=Object.freeze({PROCESSING:`processing`,PROCESSED:`processed`,UNPROCESSED:`unprocessed`,FAILED:`failed`}),t={isProcessing:t=>t===e.PROCESSING};export{t};

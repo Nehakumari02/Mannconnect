@@ -1,0 +1,1 @@
+import{F as e,_ as t,t as n}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var r={},i={class:`colibri-primary-animation`};function a(n,r){return e(),t(`div`,i)}var o=n(r,[[`render`,a]]);export{o as default};

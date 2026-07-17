@@ -1,0 +1,1 @@
+import{C as e,F as t,_ as n,m as r,t as i,ut as a}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var o=e({props:{title:{type:String,required:!0}}}),s={class:`block py-4 px-3`},c={class:`text-par-n font-semibold text-lab-pr2 text-center`};function l(e,i,o,l,u,d){return t(),n(`div`,s,[r(`h3`,c,a(e.title),1)])}var u=i(o,[[`render`,l]]);export{u as t};

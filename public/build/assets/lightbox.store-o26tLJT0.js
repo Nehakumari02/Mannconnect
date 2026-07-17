@@ -1,0 +1,1 @@
+import{n as e}from"./pinia-BkWVIj3l.js";var t=e(`lightbox_store`,{state:function(){return{albumData:null}},getters:{postData:function(e){return this.albumData}},actions:{add:function(e){this.albumData=e},remove:function(){this.albumData=null}}});export{t};

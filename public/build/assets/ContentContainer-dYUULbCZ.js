@@ -1,0 +1,1 @@
+import{C as e,F as t,R as n,_ as r,m as i,st as a,t as o}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var s=e({props:{width:{type:String,default:`w-content`}}}),c={class:`block`};function l(e,o,s,l,u,d){return t(),r(`div`,c,[i(`div`,{class:a(e.width)},[n(e.$slots,`default`)],2)])}var u=o(s,[[`render`,l]]);export{u as t};

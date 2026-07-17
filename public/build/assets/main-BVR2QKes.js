@@ -1,0 +1,1 @@
+import"./code-C3OH3H1b.js";document.addEventListener(`DOMContentLoaded`,function(){let e=document.querySelector(`.sidenav-active`);e&&e.scrollIntoView({behavior:`smooth`,block:`center`})});

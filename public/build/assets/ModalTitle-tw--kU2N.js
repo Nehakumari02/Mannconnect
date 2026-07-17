@@ -1,0 +1,1 @@
+import{C as e,F as t,_ as n,t as r,ut as i}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var a=e({props:{title:{type:String,required:!0}}}),o={class:`text-par-l font-semibold flex-1 text-lab-pr2 truncate`};function s(e,r,a,s,c,l){return t(),n(`h4`,o,i(e.title),1)}var c=r(a,[[`render`,s]]);export{c as t};

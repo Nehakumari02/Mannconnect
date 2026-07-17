@@ -1,0 +1,1 @@
+import{C as e,p as t,t as n,ut as r}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var i=e({props:{timestamp:{type:String,required:!0}},setup:function(e){return{date:t(()=>new Date(e.timestamp).toLocaleString())}}});function a(e,t,n,i,a,o){return r(e.date)}var o=n(i,[[`render`,a]]);export{o as default};

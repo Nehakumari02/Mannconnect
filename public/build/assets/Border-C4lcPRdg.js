@@ -1,0 +1,1 @@
+import{C as e,F as t,_ as n,st as r,t as i}from"./_plugin-vue_export-helper-0gAuu8Fn.js";var a=e({props:{height:{type:String,default:`h-px`},bg:{type:String,default:`bg-bord-tr`},opacity:{type:String,default:`opacity-100`}}});function o(e,i,a,o,s,c){return t(),n(`div`,{class:r([e.height,e.bg,e.opacity])},null,2)}var s=i(a,[[`render`,o]]);export{s as default};

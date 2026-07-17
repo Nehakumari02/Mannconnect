@@ -1,0 +1,1 @@
+import{tt as e}from"./_plugin-vue_export-helper-0gAuu8Fn.js";function t(){let t=e(!1);return{status:t,open:function(){t.value=!0},close:function(){t.value=!1},toggle:function(){t.value=!t.value}}}export{t};
