@@ -14,7 +14,7 @@ class GreetingAgent implements Agent, Conversational, HasTools
     use Promptable;
 
     /**
-     * Get the instructions that the agent should follow.
+     * Get the instructions that the agent should follo.
      */
     public function instructions(): Stringable|string
     {
