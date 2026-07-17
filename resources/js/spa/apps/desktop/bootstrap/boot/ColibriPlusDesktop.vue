@@ -4,7 +4,7 @@
             <span class="absolute top-6 left-6 text-par-m text-lab-pr">{{ $t('labels.hi_there') }}</span>
             <span class="absolute top-6 right-6 text-par-m text-lab-pr">{{ $t('labels.one_moment') }}...</span>
             <div class="inline-block w-16">
-                <img v-bind:src="$embedder('assets.logos.url')" alt="Logo" class="w-full">
+
             </div>
         </div>
     </template>

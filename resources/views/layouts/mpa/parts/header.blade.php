@@ -8,8 +8,10 @@
             @endif
         </div>
 
-        <a class="absolute left-half -translate-x-3.5" href="{{ route('user.desktop.index', '/') }}">
-            <img class="h-7" src="{{ $logotypeUrl }}" alt="Image">
+        <a class="absolute left-half -translate-x-12" href="{{ route('user.desktop.index', '/') }}">
+            <span class="font-serif italic text-[22px] font-bold tracking-wide bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-transparent bg-clip-text">
+                MannConnect
+            </span>
         </a>
 
         <div class="inline-flex gap-5 text-lab-pr font-medium items-center ml-auto">

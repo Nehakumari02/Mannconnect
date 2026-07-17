@@ -2,7 +2,7 @@
     <SidebarContainer>
         <template v-slot:sidebarTitle>
             <RouterLink class="flex items-center gap-2.5 px-5 mb-4 border-b border-bord-pr pb-4" v-bind:to="{ name: 'home_index' }">
-                <img class="h-7" v-bind:src="$embedder('assets.logos.url')" alt="Logo">
+
                 <span class="text-lab-pr2 text-par-l font-bold">
                     {{ $embedder('config.app.name') }}
                 </span>

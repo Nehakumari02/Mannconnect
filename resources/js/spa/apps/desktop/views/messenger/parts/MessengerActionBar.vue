@@ -2,7 +2,7 @@
 	<div class="w-action-bar shrink-0">
 		<div class="flex flex-col h-full w-full items-center py-6">
 			<RouterLink v-bind:to="{ name: 'home_index' }" class="flex justify-center mb-4">
-				<img class="h-7" v-bind:src="$embedder('assets.logos.url')" alt="Logo">
+
 			</RouterLink>
 			<div class="w-full px-4 pb-2">
 				<Border></Border>

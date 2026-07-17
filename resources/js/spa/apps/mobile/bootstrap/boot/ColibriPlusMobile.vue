@@ -2,7 +2,7 @@
 	<template v-if="appLoading">
 		<div class="fixed inset-0 z-100 bg-bg-pr flex-center">
             <div class="inline-block w-10">
-                <img v-bind:src="$embedder('assets.logos.url')" alt="Logo" class="w-full">
+
             </div>
         </div>
 	</template>
