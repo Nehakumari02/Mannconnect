@@ -27,6 +27,17 @@ jobs:
         cp .env.example .env
         composer install --no-dev --optimize-autoloader
 
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Build Frontend
+      run: |
+        sed -i 's|APP_URL=http://localhost|APP_URL=https://darkred-locust-486842.hostingersite.com|g' .env
+        npm install
+        npm run build
+
     - name: Sync files to Hostinger
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
