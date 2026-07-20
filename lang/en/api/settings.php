@@ -107,7 +107,7 @@ return [
 		],
 		'birth_date' => [
 			'page_desc' => 'Select your date of birth. You can hide or display this information on your profile page.',
-			'privacy_helper' => 'Use the switch to hide your age and date of birth information on your profile',
+			'privacy_helper' => 'Use the switch to hide your age and date of birth information on your profile, and prevent others from getting notified about your birthday',
 		],
 		'personal_info' => [
 			'residence_city' => 'Residence city',
@@ -177,6 +177,8 @@ return [
 			'mentions_helper' => 'Notifications about mentions in posts, comments, or stories.',
 			'followers' => 'Followers',
 			'followers_helper' => 'Notifications about new followers.',
+			'birthdays' => 'Birthdays',
+			'birthdays_helper' => 'Notifications when it is a connection\'s birthday.',
 			'follow_request' => 'Follow request',
 			'follow_request_helper' => 'Notifications about new follow requests.',
 		],

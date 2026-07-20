@@ -20,7 +20,7 @@ class Notifications
 	public const FOLLOWED_REQUESTED = 'user.followed-requested';
 	public const FOLLOWED = 'user.followed';
 	public const FOLLOW_ACCEPTED = 'user.follow-accepted';
-
+	public const BIRTHDAY = 'user.birthday';
 
 	public const POST_COMMENTED = 'post.commented';
 	public const POST_MENTIONED = 'post.mentioned';

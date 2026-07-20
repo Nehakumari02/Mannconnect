@@ -63,6 +63,12 @@
                     v-bind:captionText="$t('settings.forms.notif_settings.followers_helper')"
                 v-bind:titleText="$t('settings.forms.notif_settings.followers')"></SectionToggle>
             </div>
+            <div class="mb-3">
+                <SectionToggle
+                    v-model.lazy="formData.birthdays"
+                    v-bind:captionText="$t('settings.forms.notif_settings.birthdays_helper')"
+                v-bind:titleText="$t('settings.forms.notif_settings.birthdays')"></SectionToggle>
+            </div>
             <SectionToggle
                 v-model.lazy="formData.follow_request"
                 v-bind:captionText="$t('settings.forms.notif_settings.follow_request_helper')"
