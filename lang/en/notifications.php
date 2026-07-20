@@ -14,6 +14,7 @@ return [
 		'account_linked' => 'Your accounts have been successfully linked.',
 		'deposit_success' => 'Your deposit has been successfully completed.',
 		'payment_received' => 'New payment received.',
+		'birthday' => 'Today is :name\'s birthday!',
 	],
     'post' => [
 		'post_reacted' => 'reacted to your post',
@@ -27,6 +28,7 @@ return [
 		'comment_mentioned' => 'has mentioned you in a comment',
 		'post_mentioned' => 'has mentioned you in a post',
 		'story_mentioned' => 'has mentioned you in a story',
+		'birthday' => 'has a birthday today! Wish them a happy birthday.',
 	],
 	'important' => [
 		'account_linked' => 'has linked your account to their account',
