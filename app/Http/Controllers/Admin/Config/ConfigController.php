@@ -31,6 +31,11 @@ class ConfigController extends Controller
         return view('admin::config.general.index');
     }
 
+    public function ads()
+    {
+        return view('admin::config.ads.index');
+    }
+
     public function ffmpeg()
     {
         $tab = request()->input('tab', 'ffmpeg');

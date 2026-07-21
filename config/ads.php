@@ -51,6 +51,7 @@ return [
 	],
 	'default_approval' => env('ADS_DEFAULT_APPROVAL', true),
 	'price_per_view' => env('ADS_PRICE_PER_VIEW', 0.01),
+	'price_per_click' => env('ADS_PRICE_PER_CLICK', 0.10),
 
 	// Add refresh interval in minutes.
 	'refresh_interval' => env('ADS_AD_REFRESH_INTERVAL', 30),

@@ -8,6 +8,8 @@ Route::get('/branding', [App\Http\Controllers\Admin\Config\ConfigController::cla
 
 Route::get('/general', [App\Http\Controllers\Admin\Config\ConfigController::class, 'general'])->name('admin.config.general');
 
+Route::get('/ads', [App\Http\Controllers\Admin\Config\ConfigController::class, 'ads'])->name('admin.config.ads');
+
 Route::get('/ffmpeg', [App\Http\Controllers\Admin\Config\ConfigController::class, 'ffmpeg'])->name('admin.config.ffmpeg');
 
 Route::get('/email', [App\Http\Controllers\Admin\Config\ConfigController::class, 'email'])->name('admin.config.email');

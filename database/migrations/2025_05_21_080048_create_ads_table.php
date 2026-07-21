@@ -28,7 +28,7 @@ return new class extends Migration
             $table->decimal('price_per_view', 10, 2)->default(config('ads.price_per_view'));
             $table->string('target_url')->nullable();
             $table->string('approval')->default(AdApproval::PENDING);
-            $table->integer('views_count')->default(1);
+            $table->integer('views_count')->default(0);
             $table->timestamp('last_show_at')->nullable();
             $table->timestamp('last_charge_at')->nullable();
             $table->timestamps();

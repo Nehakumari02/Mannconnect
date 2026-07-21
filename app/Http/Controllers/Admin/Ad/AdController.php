@@ -52,9 +52,6 @@ class AdController extends Controller
 
         (new DeleteAdAction($adData))->execute();
 
-        // TODO: Consider refunding the budget to the user, if the ad is fully deleted.
-        // Add checkbox to include refunding the budget to the user.
-
         return redirect()->route('admin.ads.index')->with('flashMessage', (new Flash(content: __('admin/flash.ad.delete_success')))->get());
     }
 
@@ -76,6 +73,27 @@ class AdController extends Controller
         $adData->update([
             'approval' => AdApproval::REJECTED
         ]);
+
+        $unspentBudget = $adData->total_budget - $adData->spent_budget;
+        
+        if($unspentBudget > 0) {
+            $walletService = app(\App\Services\Wallet\WalletService::class);
+            $walletService->setUserData($adData->user)
+                ->addWalletBalance($unspentBudget)
+                ->addWalletTransaction([
+                    'amount' => $unspentBudget,
+                    'transaction_type' => \App\Enums\Wallet\TransactionType::REFUND,
+                    'status' => \App\Enums\Wallet\TransactionStatus::COMPLETED,
+                    'direction' => \App\Enums\Wallet\TransactionDirection::INCOMING,
+                    'currency' => config('app.default_currency'),
+                    'metadata' => [
+                        'ad_id' => $adData->id,
+                        'reason' => 'Ad rejected'
+                    ]
+                ]);
+            
+            $adData->update(['total_budget' => $adData->spent_budget]);
+        }
 
         return back()->with('flashMessage', (new Flash(content: __('admin/flash.ad.reject_success')))->get());
     }
