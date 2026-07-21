@@ -25,6 +25,10 @@
                 <x-navbar.item href="{{ route('admin.config.rewards') }}" icon="star-01">
                     Rewards Settings
                 </x-navbar.item>
+                
+                <x-navbar.item href="{{ route('admin.config.ads') }}" icon="announcement-01">
+                    Ads Manager Settings
+                </x-navbar.item>
 
                 <x-navbar.item href="{{ route('admin.config.email') }}" icon="mail-01">
                     {{ __('admin/sidebar.email_settings') }}

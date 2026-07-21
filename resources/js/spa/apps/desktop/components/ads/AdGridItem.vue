@@ -1,6 +1,6 @@
 <template>
 	<template v-if="! state.isLoading">
-		<a v-if="adData" v-bind:href="adData.target_url" target="_blank" class="w-full block">
+		<a v-if="adData" v-bind:href="adData.target_url" target="_blank" class="w-full block" @click="trackClick">
 			<div class="border border-bord-pr rounded-2xl overflow-hidden">
 				<div class="overflow-hidden relative">
 					<img class="w-full" v-bind:src="adData.preview_image_url" alt="Ad Creative">
@@ -43,11 +43,17 @@
 			let adInterval = null;
 
 			const adData = computed(() => {
-				return adStore.ad;
+				return adStore.sidebarAd;
 			});
 
 			const fetchAd = async function() {
-				await adStore.fetchAd();
+				await adStore.fetchSidebarAd();
+			}
+
+			const trackClick = async function() {
+				if(adData.value) {
+					await fetch('/api/ads/ad/' + adData.value.id + '/click', { method: 'POST' });
+				}
 			}
 
 			onMounted(async function() {
@@ -64,7 +70,8 @@
 
 			return {
 				adData: adData,
-				state: state
+				state: state,
+				trackClick: trackClick
 			}
 		},
 		components: {

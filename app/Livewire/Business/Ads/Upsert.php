@@ -41,6 +41,7 @@ class Upsert extends Component
             'cta_text' => $this->adData->cta_text,
             'total_budget' => $this->adData->total_budget,
             'target_url' => $this->adData->target_url,
+            'type' => $this->adData->type ?? 'sidebar',
         ];
     }
 
@@ -87,6 +88,11 @@ class Upsert extends Component
                 'required',
                 'url',
                 XRule::join('max', config('ads.ad.validation.target_url.max')),
+            ],
+            'formData.type' => [
+                'required',
+                'string',
+                'in:sidebar,feed'
             ]
         ];
     }
@@ -111,12 +117,15 @@ class Upsert extends Component
             'title' => e($this->formData['title']),
             'content' => e($this->formData['content']),
             'cta_text' => e($this->formData['cta_text']),
-            'target_url' => $this->formData['target_url']
+            'target_url' => $this->formData['target_url'],
+            'type' => $this->formData['type']
         ];
 
         if($this->upsertType == 'create') {
-            $updateData['price_per_view'] = config('ads.price_per_view');
-            $updateData['approval'] = config('ads.default_approval') ? AdApproval::APPROVED : AdApproval::PENDING;
+            $adSettings = app(\App\Settings\AdSettings::class);
+            $updateData['price_per_view'] = $adSettings->price_per_view;
+            $updateData['price_per_click'] = $adSettings->price_per_click;
+            $updateData['approval'] = $adSettings->default_approval ? AdApproval::APPROVED : AdApproval::PENDING;
             $updateData['status'] = AdStatus::PUBLISHED;
             $updateData['total_budget'] = $this->formData['total_budget'];
         }
