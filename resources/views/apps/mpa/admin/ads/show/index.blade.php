@@ -58,7 +58,8 @@
 			<x-counter.counter>
 				<x-counter.counter-item counterValue="{{ $adData->formatted_total_budget }}" captionText="{{ __('table.labels.total_budget') }}"></x-counter.counter-item>
 				<x-counter.counter-item counterValue="{{ $adData->formatted_spent_budget }}" captionText="{{ __('table.labels.spends') }}"></x-counter.counter-item>
-				<x-counter.counter-item counterValue="{{ $adData->views_count }}" captionText="{{ __('labels.views') }}"></x-counter.counter-item>
+				<x-counter.counter-item counterValue="{{ $adData->formatted_views_count }}" captionText="{{ __('labels.views') }}"></x-counter.counter-item>
+				<x-counter.counter-item counterValue="{{ $adData->formatted_clicks_count }}" captionText="Clicks"></x-counter.counter-item>
 			</x-counter.counter>
 		</div>
 
@@ -116,6 +117,14 @@
 				</x-line-table.row>
 				<x-line-table.row>
 					<x-slot:labelText>
+						Price Per Click
+					</x-slot:labelText>
+					<x-slot:labelValue>
+						{{ $adData->formatted_price_per_click }}
+					</x-slot:labelValue>
+				</x-line-table.row>
+				<x-line-table.row>
+					<x-slot:labelText>
 						{{ __('table.labels.last_charge_at') }}
 					</x-slot:labelText>
 					<x-slot:labelValue>
@@ -131,7 +140,15 @@
 						{{ __('labels.views') }}
 					</x-slot:labelText>
 					<x-slot:labelValue>
-						{{ $adData->views_count }}
+						{{ $adData->formatted_views_count }}
+					</x-slot:labelValue>
+				</x-line-table.row>
+				<x-line-table.row>
+					<x-slot:labelText>
+						Clicks
+					</x-slot:labelText>
+					<x-slot:labelValue>
+						{{ $adData->formatted_clicks_count }}
 					</x-slot:labelValue>
 				</x-line-table.row>
 			</x-line-table.table>

@@ -16,3 +16,4 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/ad', [App\Http\Controllers\Api\Ad\AdController::class, 'getAd']);
+Route::post('/ad/{adId}/click', [App\Http\Controllers\Api\Ad\AdController::class, 'clickAd']);

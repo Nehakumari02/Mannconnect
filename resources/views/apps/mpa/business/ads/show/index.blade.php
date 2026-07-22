@@ -69,6 +69,7 @@
                     <x-counter.counter-item counterValue="{{ $adData->formatted_spent_budget }}" captionText="{{ __('business/ads.spent_budget') }}"></x-counter.counter-item>
                     <x-counter.counter-item counterValue="{{ $adData->formatted_total_budget }}" captionText="{{ __('business/ads.total_budget') }}"></x-counter.counter-item>
                     <x-counter.counter-item counterValue="{{ $adData->formatted_views_count }}" captionText="{{ __('labels.views') }}"></x-counter.counter-item>
+                    <x-counter.counter-item counterValue="{{ $adData->formatted_clicks_count }}" captionText="Clicks"></x-counter.counter-item>
                 </x-counter.counter>
             </div>
             <div class="mb-8">
@@ -78,7 +79,7 @@
                             {{ __('labels.publisher') }}
                         </x-slot:labelText>
                         <x-slot:labelValue>
-                            {{ $adData->user->name }} ({{ $adData->user->caption }})
+                            {{ $adData->user->name }}@if($adData->user->caption) ({{ $adData->user->caption }})@endif
                         </x-slot:labelValue>
                     </x-line-table.row>
                     @if(! $adData->approval->isApproved())
@@ -108,6 +109,15 @@
                         </x-slot:labelText>
                         <x-slot:labelValue>
                             {{ $adData->formatted_price_per_view }}
+                        </x-slot:labelValue>
+                    </x-line-table.row>
+
+                    <x-line-table.row>
+                        <x-slot:labelText>
+                            Price Per Click
+                        </x-slot:labelText>
+                        <x-slot:labelValue>
+                            {{ $adData->formatted_price_per_click }}
                         </x-slot:labelValue>
                     </x-line-table.row>
 
@@ -143,14 +153,17 @@
                             {{ $adData->formatted_views_count }}
                         </x-slot:labelValue>
                     </x-line-table.row>
+                    <x-line-table.row>
+                        <x-slot:labelText>
+                            Clicks
+                        </x-slot:labelText>
+                        <x-slot:labelValue>
+                            {{ $adData->formatted_clicks_count }}
+                        </x-slot:labelValue>
+                    </x-line-table.row>
                 </x-line-table.table>
             </div>
-            <div class="mb-2">
-                <x-entity.title title="{{ __('business/ads.ad_show_stats') }}" caption="{{ now()->locale(app()->getLocale())->format('F, Y') }}"></x-entity.title>
-            </div>
-            <div class="mb-6">
-                <div id="chart" class="bg-input-pr"></div>
-            </div>
+
             <div class="block">
                 <div class="mb-2">
                     <x-entity.title title="{{ __('labels.additional_info') }}"></x-entity.title>
@@ -161,7 +174,7 @@
                             #ID
                         </x-slot:labelText>
                         <x-slot:labelValue>
-                            {{ $adData->formatted_id }}
+                            {{ $adData->id }}
                         </x-slot:labelValue>
                     </x-striped-table.row>
                     <x-striped-table.row>
@@ -203,47 +216,5 @@
                 });
             }
         };
-
-        window.addEventListener('load', () => {
-            new ApexCharts(document.querySelector("#chart"), {
-                chart: {
-                    type: 'area', // or whichever chart type you're using
-                    height: 240,
-                    toolbar: {
-                        show: false  // This hides the zoom, pan, reset (home), and menu controls
-                    }
-                },
-                series: [{
-                    name: 'Data',
-                    data: [150, 200, 170, 240, 300, 250, 220],
-                }],
-                xaxis: {
-                    categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                    type: 'category',
-                    labels: {
-                        rotate: -90, // Rotates the datetime labels on the X-axis
-                    }
-                },
-                grid: {
-                    xaxis: {
-                        lines: {
-                            show: true // Enable vertical grid lines along the X-axis
-                        }
-                    },
-                    yaxis: {
-                        lines: {
-                            show: false // Disable horizontal grid lines along the Y-axis (optional)
-                        }
-                    },
-                    borderColor: '#ffffff', // Set grid lines color to light gray
-                    strokeDashArray: 0, // Solid line
-                    position: 'back', // Ensure grid lines are behind the chart
-                }
-            }).render();
-        });
     </script>
 @endsection
-
-@push('scripts')
-    @vite('resources/js/mpa/apexcharts.js')
-@endpush

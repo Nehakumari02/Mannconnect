@@ -80,4 +80,14 @@ class Ad extends Model
     {
         return Num::currency($this->price_per_view);
     }
+
+    public function getFormattedClicksCountAttribute(): string
+    {
+        return Num::abbreviate($this->clicks_count);
+    }
+
+    public function getFormattedPricePerClickAttribute(): string
+    {
+        return Num::currency($this->price_per_click);
+    }
 }

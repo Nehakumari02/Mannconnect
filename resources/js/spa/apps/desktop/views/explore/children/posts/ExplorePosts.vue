@@ -18,7 +18,10 @@
                 <div class="block" v-else>
                     <FeedUpdate v-if="newPosts.length" v-bind:posts="newPosts" v-on:click="applyNewPosts"></FeedUpdate>
                     <div v-if="posts.length">
-                        <TimelinePublication v-for="postData in posts" v-bind:key="postData.id" v-bind:postData="postData"></TimelinePublication>
+                        <template v-for="(postData, index) in posts" :key="postData.id">
+                            <TimelinePublication :postData="postData"></TimelinePublication>
+                            <AdFeedItem v-if="index === 2 && feedAdData" :adData="feedAdData"></AdFeedItem>
+                        </template>
                     </div>
                     <div v-else>
                         <FluidEmptyState v-bind:text="$t('empty_state.empty')"></FluidEmptyState>
@@ -54,6 +57,7 @@
     import TimelineContainer from '@D/components/layout/TimelineContainer.vue';
     import FollowRecommendationList from '@D/components/recommend/follow/list/FollowRecommendationList.vue';
     import AdGridItem from '@D/components/ads/AdGridItem.vue';
+    import AdFeedItem from '@D/components/ads/AdFeedItem.vue';
     import TimelinePublication from '@D/components/timeline/feed/TimelinePublication.vue';
     import TimelinePublicationSkeleton from '@D/components/timeline/feed/TimelinePublicationSkeleton.vue';
     import FluidEmptyState from '@D/components/page-states/empty/FluidEmptyState.vue';
@@ -61,6 +65,7 @@
     import TabsLink from '@D/components/general/tabs/content/parts/TabsLink.vue';
     import ScrollTopButton from '@D/components/inter-ui/buttons/ScrollTopButton.vue';
     import FeedUpdate from '@D/components/timeline/update/FeedUpdate.vue';
+    import { useAdStore } from '@D/store/ad/ad.store.js';
 
     export default defineComponent({
         setup: function() {
@@ -81,6 +86,11 @@
             const posts = computed(() => {
 				return explorePostsStore.posts;
 			});
+
+            const adStore = useAdStore();
+            const feedAdData = computed(() => {
+                return adStore.feedAd;
+            });
 
             useInfiniteScroll({
                 callback: async () => {
@@ -105,6 +115,7 @@
                 explorePostsStore.resetFilter();
 
                 await explorePostsStore.fetchPosts();
+                await adStore.fetchFeedAd();
 
                	state.isLoading = false;
 
@@ -144,6 +155,7 @@
                 state: state,
 				posts: posts,
                 newPosts: newPosts,
+                feedAdData: feedAdData,
                 applyNewPosts: () => {
                     explorePostsStore.applyUpdate();
                 }
@@ -154,6 +166,7 @@
             TimelineContainer: TimelineContainer,
             FollowRecommendationList: FollowRecommendationList,
             AdGridItem: AdGridItem,
+            AdFeedItem: AdFeedItem,
             TimelinePublication: TimelinePublication,
             FluidEmptyState: FluidEmptyState,
             TimelinePublicationSkeleton: TimelinePublicationSkeleton,
