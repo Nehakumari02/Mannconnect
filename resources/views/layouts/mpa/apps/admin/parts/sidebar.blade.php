@@ -74,7 +74,12 @@
                 :current="route_is('admin.market.*')"
             text="{{ __('admin/sidebar.marketplace') }}"/>
 
-
+            <x-sidebar.navlist-item
+                href="{{ route('admin.jobs.index') }}"
+                iconName="case-01"
+                iconType="solar"
+                :current="route_is('admin.jobs.*')"
+            text="{{ __('admin/sidebar.jobs') }}"/>
             <x-sidebar.navlist-item
                 href="{{ route('admin.chats.index') }}"
                 iconName="chat-01"
