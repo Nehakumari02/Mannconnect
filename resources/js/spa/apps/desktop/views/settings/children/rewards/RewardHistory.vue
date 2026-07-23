@@ -7,6 +7,9 @@
                 <h3 class="text-par-l font-bold text-lab-pr">
                     {{ $t('rewards.history_title') }}
                 </h3>
+                <div v-if="!isLoading" class="text-par-l font-bold text-green-600">
+                    Total: {{ totalPoints }} pts
+                </div>
             </div>
 
             <div class="p-6">
@@ -62,6 +65,7 @@
             const logs = ref([]);
             const page = ref(1);
             const hasNextPage = ref(false);
+            const totalPoints = ref(0);
 
             const fetchLogs = async () => {
                 if (page.value === 1) {
@@ -75,6 +79,7 @@
                     
                     if (page.value === 1) {
                         logs.value = response.data.data;
+                        totalPoints.value = response.data.total_points;
                     } else {
                         logs.value = [...logs.value, ...response.data.data];
                     }
@@ -97,6 +102,7 @@
                 isLoading,
                 isFetchingMore,
                 logs,
+                totalPoints,
                 hasNextPage,
                 fetchLogs
             };

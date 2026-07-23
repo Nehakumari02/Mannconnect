@@ -22,6 +22,11 @@ class RewardSettings extends Settings
     public int $share_content;
     public int $refer_new_user;
 
+    public int $limit_receive_like;
+    public int $limit_receive_comment;
+    public int $limit_share_content;
+    public int $limit_refer_new_user;
+
     public static function group(): string
     {
         return 'reward';

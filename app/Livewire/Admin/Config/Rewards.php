@@ -28,6 +28,11 @@ class Rewards extends Component
             'receive_comment' => $rewardSettings->receive_comment,
             'share_content' => $rewardSettings->share_content,
             'refer_new_user' => $rewardSettings->refer_new_user,
+            
+            'limit_receive_like' => $rewardSettings->limit_receive_like,
+            'limit_receive_comment' => $rewardSettings->limit_receive_comment,
+            'limit_share_content' => $rewardSettings->limit_share_content,
+            'limit_refer_new_user' => $rewardSettings->limit_refer_new_user,
         ];
     }
 
@@ -47,6 +52,11 @@ class Rewards extends Component
             'formData.receive_comment' => ['required', 'integer', 'min:0'],
             'formData.share_content' => ['required', 'integer', 'min:0'],
             'formData.refer_new_user' => ['required', 'integer', 'min:0'],
+
+            'formData.limit_receive_like' => ['required', 'integer', 'min:1'],
+            'formData.limit_receive_comment' => ['required', 'integer', 'min:1'],
+            'formData.limit_share_content' => ['required', 'integer', 'min:1'],
+            'formData.limit_refer_new_user' => ['required', 'integer', 'min:1'],
         ]);
 
         $rewardSettings = app(RewardSettings::class);
@@ -64,6 +74,11 @@ class Rewards extends Component
         $rewardSettings->receive_comment = $this->formData['receive_comment'];
         $rewardSettings->share_content = $this->formData['share_content'];
         $rewardSettings->refer_new_user = $this->formData['refer_new_user'];
+
+        $rewardSettings->limit_receive_like = $this->formData['limit_receive_like'];
+        $rewardSettings->limit_receive_comment = $this->formData['limit_receive_comment'];
+        $rewardSettings->limit_share_content = $this->formData['limit_share_content'];
+        $rewardSettings->limit_refer_new_user = $this->formData['limit_refer_new_user'];
 
         $rewardSettings->save();
 

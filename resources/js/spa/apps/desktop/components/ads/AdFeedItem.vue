@@ -1,7 +1,7 @@
 <template>
     <div v-if="adData" class="bg-input-pr border border-bord-pr rounded-2xl mb-4 p-4">
         <div class="flex items-center justify-between mb-3">
-            <span class="text-cap-s font-semibold text-lab-sc uppercase tracking-wider">Sponsored</span>
+            <span class="text-cap-s font-semibold text-lab-sc uppercase tracking-wider">{{ $t('labels.sponsored') }}</span>
         </div>
         <a :href="adData.target_url" target="_blank" @click="trackClick" class="block">
             <h3 class="text-par-l font-bold text-lab-pr mb-2">{{ adData.title }}</h3>

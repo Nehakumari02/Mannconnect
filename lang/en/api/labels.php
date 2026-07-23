@@ -8,6 +8,7 @@ return [
 	'last_seen_ago' => 'Last seen {time} ago',
 	'videos' => 'Videos',
 	'ad' => 'Ad',
+	'sponsored' => 'Sponsored',
 	'search' => 'Search',
 	'messages' => 'Messages',
 	'video_message' => 'Video message',

@@ -4,6 +4,11 @@
     <div class="px-4 py-2" v-if="! isLoading">
         <SettingsDesc v-bind:text="$t('rewards.history_description')"></SettingsDesc>
 
+        <div class="py-4 mt-2 mb-2 flex items-center justify-between border-b border-bord-pr">
+            <span class="text-par-l font-bold text-lab-pr">Total Earned</span>
+            <span class="text-par-l font-bold text-green-600">{{ totalPoints }} pts</span>
+        </div>
+
         <div v-if="logs.length > 0">
             <div v-for="(log, index) in logs" v-bind:key="log.id" class="flex items-center justify-between py-4 border-b border-bord-tr last:border-b-0">
                 <div class="flex items-center gap-3">
@@ -56,6 +61,7 @@
             const logs = ref([]);
             const page = ref(1);
             const hasNextPage = ref(false);
+            const totalPoints = ref(0);
 
             const fetchLogs = async () => {
                 if (page.value === 1) {
@@ -69,6 +75,7 @@
                     
                     if (page.value === 1) {
                         logs.value = response.data.data;
+                        totalPoints.value = response.data.total_points;
                     } else {
                         logs.value = [...logs.value, ...response.data.data];
                     }
@@ -91,6 +98,7 @@
                 isLoading,
                 isFetchingMore,
                 logs,
+                totalPoints,
                 hasNextPage,
                 fetchLogs
             };
