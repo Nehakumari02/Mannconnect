@@ -101,6 +101,25 @@ class RewardService
             return !$existsToday;
         }
 
+        // Dynamic daily limits
+        $dynamicDailyLimitActions = [
+            'receive_like' => $this->settings->limit_receive_like ?? 50,
+            'receive_comment' => $this->settings->limit_receive_comment ?? 20,
+            'share_content' => $this->settings->limit_share_content ?? 10,
+            'refer_new_user' => $this->settings->limit_refer_new_user ?? 3,
+        ];
+
+        if (array_key_exists($actionType, $dynamicDailyLimitActions)) {
+            $limit = $dynamicDailyLimitActions[$actionType];
+            
+            $countToday = RewardLog::where('user_id', $user->id)
+                ->where('action_type', $actionType)
+                ->whereDate('created_at', Carbon::today())
+                ->count();
+                
+            return $countToday < $limit;
+        }
+
         // Other actions (no limit or managed elsewhere)
         return true;
     }

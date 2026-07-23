@@ -16,12 +16,12 @@
                 </x-form.text-input>
             </div>
             <div class="mb-6">
-                <label class="block text-par-s font-semibold text-lab-pr mb-2">Ad Placement Type *</label>
+                <label class="block text-par-s font-semibold text-lab-pr mb-2">{{ __('business/ads.form.placement_type') }} *</label>
                 <select wire:model="formData.type" class="w-full border-bord-pr rounded-md p-2 bg-input-pr text-lab-pr focus:ring-brand-900 focus:border-brand-900">
-                    <option value="sidebar">Sidebar Ad</option>
-                    <option value="feed">Timeline Feed Ad</option>
+                    <option value="sidebar">{{ __('business/ads.form.placement_sidebar') }}</option>
+                    <option value="feed">{{ __('business/ads.form.placement_feed') }}</option>
                 </select>
-                <p class="text-cap-s text-lab-sc mt-1">Select where you want your ad to be displayed.</p>
+                <p class="text-cap-s text-lab-sc mt-1">{{ __('business/ads.form.placement_helper') }}</p>
             </div>
             <div class="mb-6">
                 <x-form.text-input

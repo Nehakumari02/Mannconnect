@@ -22,6 +22,8 @@ class RewardHistoryController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate($limit);
 
-        return RewardLogResource::collection($logs);
+        return RewardLogResource::collection($logs)->additional([
+            'total_points' => me()->points
+        ]);
     }
 }

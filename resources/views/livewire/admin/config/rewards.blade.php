@@ -57,6 +57,24 @@
         <x-form.text-input type="number" labelText="Refer New User (Only for verified user)" wire:model="formData.refer_new_user" name="formData.refer_new_user"></x-form.text-input>
     </x-form.group>
 
+    <div class="mb-6 mt-8">
+        <x-div/>
+        <h3 class="font-bold text-lg mb-2 mt-6">Daily Limits (Max Times Per Day)</h3>
+    </div>
+
+    <x-form.group>
+        <x-form.text-input type="number" labelText="Max Likes Received Per Day" wire:model="formData.limit_receive_like" name="formData.limit_receive_like"></x-form.text-input>
+    </x-form.group>
+    <x-form.group>
+        <x-form.text-input type="number" labelText="Max Comments Received Per Day" wire:model="formData.limit_receive_comment" name="formData.limit_receive_comment"></x-form.text-input>
+    </x-form.group>
+    <x-form.group>
+        <x-form.text-input type="number" labelText="Max Content Shares Per Day" wire:model="formData.limit_share_content" name="formData.limit_share_content"></x-form.text-input>
+    </x-form.group>
+    <x-form.group>
+        <x-form.text-input type="number" labelText="Max New User Referrals Per Day" wire:model="formData.limit_refer_new_user" name="formData.limit_refer_new_user"></x-form.text-input>
+    </x-form.group>
+
     <x-ui.buttons.pill
         type="submit"
         size="sm"

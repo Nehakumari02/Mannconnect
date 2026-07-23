@@ -12,6 +12,7 @@ return [
     'custom_code_settings' => 'Custom Code Injection',
     'backup_settings' => 'Backup Settings',
     'backup_history' => 'Backup History',
+    'ads_settings' => 'Ads Settings',
 	'tabs' => [
         'system' => 'System',
         'storage' => 'Storage & Media',
@@ -86,6 +87,9 @@ return [
         'redirect_url' => 'Redirect URL (Callback URL)',
         'redirect_url_helper' => 'Redirect URL (Callback URL) is the URL that will be used to redirect the user after the authentication process. Copy it and paste it into the provider settings as Callback URL.',
         'temporary_directory_helper' => 'Directory to use for the temporary files while they are being processed. Keep default value for best performance.',
+        'ads_price_per_view' => 'Price Per View',
+        'ads_price_per_click' => 'Price Per Click',
+        'ads_auto_approve' => 'Auto-Approve Ads',
 	],
     'validation' => [
         'backup_processing' => 'A backup is already in progress. Please try again later.',
