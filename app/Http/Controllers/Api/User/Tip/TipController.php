@@ -61,6 +61,8 @@ class TipController extends Controller
 
             if(! empty($avatarFilePath)) {
                 $updateData['avatar'] = $avatarFilePath;
+                
+                app(\App\Services\Reward\RewardService::class)->award($this->me, 'profile_photo_upload');
             }
         }
 
